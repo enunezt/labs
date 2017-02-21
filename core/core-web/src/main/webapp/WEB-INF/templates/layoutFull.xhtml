@@ -1,0 +1,176 @@
+<!DOCTYPE html [
+    <!ENTITY nbsp "&#160;">
+    <!ENTITY bull "&#8226;">
+    <!ENTITY copy "&#169;">
+]>
+<html xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:ui="http://java.sun.com/jsf/facelets"
+        xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <f:facet name="first">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta http-equiv="refresh" content="#{session.maxInactiveInterval};url=#{request.contextPath}/error/viewExpired.jsf?reason=expired" />
+        <link rel="shortcut icon" href="#{request.contextPath}/resources/images/favicon.ico" />
+    </f:facet>
+
+     
+  
+    <title>Aplicación Web</title>
+    <h:outputStylesheet name="main/css/showcase.css" />
+    <h:outputStylesheet name="main/css/perfect-scrollbar.css" />
+    <h:outputStylesheet name="main/css/sh.css" />
+     <!-- h:outputStylesheet name="main/css/jquery.mobile-1.4.5.min.css"/-->    
+     <h:outputStylesheet name="main/css/override.css" />     
+     <h:outputScript library="js" name="ga.js" />
+    <h:outputScript name="jquery/jquery.js" library="primefaces" />
+    <h:outputScript name="jquery/jquery-plugins.js" library="primefaces" />
+    <!-- h:outputScript name="main/js/jquery.mobile-1.4.5.min.js" /-->    
+    <h:outputScript name="main/js/perfect-scrollbar.js" />
+    <h:outputScript name="main/js/showcase.js" />
+	<h:outputScript library="js" name="calendar_es.js" />
+    <ui:insert name="head" />
+    <script type="text/javascript">
+	/*	var _gaq = _gaq || [];
+  		_gaq.push(['_setAccount', 'UA-12200033-1']);
+  		_gaq.push(['_trackPageview']);
+
+  		(function() {
+   			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  		})();*/
+	</script>
+</h:head>
+
+<h:body>
+
+    <!-- PC CONTENT STARTS HERE-->
+    <div class="PC">
+        
+	<div id="MENUSIDE">
+     <div id="MENUSIDEindent"> 
+     <span id="LOGO" class="bordersOfMenuSide"> 
+       <img src="#{request.contextPath}/resources/main/images/logo.png"/> 
+      
+       </span> 
+             
+         <ui:include src="/layout/menu.xhtml"/>
+           
+        </div>
+    </div>
+        
+   
+    
+    <div id="CONTENTSIDE">
+    	<div id="CONTENTSIDEindent">
+            
+        	<!-- header bar start-->
+			<div class="ContentSideSections" id="PFTopLinksCover" style="height:65px;" >
+              <div id="LOGOTEXTSIDE" style="width: 100%">
+
+						<div class="image-block"
+							style="width: 98%; margin-bottom: 2px;">
+							
+							
+						<img src="#{request.contextPath}/resources/main/images/nombreAppColor.svg" 
+								style="float: left;"/>
+						
+							<img
+								src="#{request.contextPath}/resources/main/images/avtLoginColor.svg"
+								height="20" width="20" style="float: right;" />
+						</div>
+						
+						<div class="image-block floatLeft" style="width: 48%;margin-left: -2px;">
+						
+						
+							<img
+								src="#{request.contextPath}/resources/main/images/baseHeaderColor.svg" />
+						</div>
+
+						<div class="reflection" style="width: 48%; float: right;">
+							<img
+								src="#{request.contextPath}/resources/main/images/baseHeaderColor.svg"
+								style="float: right;" />
+						</div>
+
+					</div>
+            <div class="mobileLogoCover padding0"> 
+				<img src="#{request.contextPath}/resources/main/images/logo.png" 
+                style="height:40px;" class="floatRight marginRight10"/> 
+				
+				<a href="#" id="btnPopupPanelOpen"				
+				class="floatLeft imgMenuMbl" style="height:40px; width:40px;">				
+				</a>
+								
+				<span class="dispBlock" style="width: 100%;margin-left: 15%; position: fixed;">
+				<img id="imgNomAppMobil" src="#{request.contextPath}/resources/main/images/nombreAppColor.svg" />              
+				</span>	
+				<br class="dispBlock"/>	
+				<span class="dispBlock textColorBackHeader fontSize14 floatLeft paddingLeft10" style="width: 100%;padding-left: 15%; ">
+				<img src="#{request.contextPath}/resources/main/images/baseHeaderColor.svg" />             
+				</span>			
+			</div>
+                 
+       
+               
+            </div>
+            
+                        	<div id="mobilemenu" class="selectmenu mediumFont" > 	
+            	  <div  id="popupPanel" style="display: none;">
+					 <span class="dispBlock logoGreenText fontSize18 mediumFont paddingLeft10">
+			 <ui:include src="/layout/menuMobil.xhtml"/>
+				</span>
+					
+			</div>		
+				
+            </div>
+            <!-- header bar end-->
+
+            <ui:insert name="content">
+           
+            </ui:insert>
+            
+            <!-- footer start-->
+            <div class="ContentSideSections">
+                <span class="floatLeft fontSize10 gray"> Derechos reservados - <a href="http://www.intermacssas.com/">
+				<h:graphicImage name="logo.png" library="gfx" style="align: float;width : 40px; height : 25px;"/></a></span>
+				
+				<span class="floatRight fontSize10 gray"> Desarrollado por - <a href="http://www.intermacssas.com/" target="_blank"> 
+				INTERMAC'S</a></span>
+                 
+			
+				<div style="clear:both" />
+				
+            </div>
+            <!-- footer end-->
+            
+        </div>
+    </div>
+    
+    </div>
+    <!-- PC CONTENT END-->
+    
+     <ui:insert name="status">
+        <p:ajaxStatus style="width:64px;height:64px;position:fixed;right:5px;bottom:5px">
+            <f:facet name="start">
+                <p:graphicImage name="main/images/loader.gif" />
+            </f:facet>
+
+            <f:facet name="complete">
+                <h:outputText value="" />
+            </f:facet>
+        </p:ajaxStatus>
+    </ui:insert>
+    
+    <ui:insert name="highlight">
+        <h:outputScript name="main/js/sh.js" target="body"/>
+    </ui:insert>
+    
+    <ui:insert name="body"></ui:insert>
+</h:body>
+</html>
