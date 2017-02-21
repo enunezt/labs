@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+	<display-name>core-web</display-name>
+	<context-param>
+		<param-name>javax.faces.DATETIMECONVERTER_DEFAULT_TIMEZONE_IS_SYSTEM_TIMEZONE</param-name>
+		<param-value>true</param-value>
+	</context-param>
+	<context-param>
+		<param-name>javax.faces.PROJECT_STAGE</param-name>
+		<param-value>Development</param-value>
+	</context-param>
+	<context-param>
+		<param-name>primefaces.THEME</param-name>
+		<param-value>omega</param-value>
+	</context-param>
+	<context-param>
+		<param-name>primefaces.UPLOADER</param-name>
+		<param-value>commons</param-value>
+	</context-param>
+	<context-param>
+		<param-name>javax.faces.FACELETS_SKIP_COMMENTS</param-name>
+		<param-value>true</param-value>
+	</context-param>
+
+
+	<context-param>
+		<param-name>com.sun.faces.numberOfViewsInSession</param-name>
+		<param-value>3</param-value>
+	</context-param>
+	<context-param>
+		<param-name>com.sun.faces.numberOfLogicalViews</param-name>
+		<param-value>5</param-value>
+	</context-param>
+	<context-param>
+		<param-name>javax.faces.PARTIAL_STATE_SAVING</param-name>
+		<param-value>false</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>com.sun.faces.disableUnicodeEscaping</param-name>
+		<param-value>true</param-value>
+	</context-param>
+
+	<!-- context-param> <param-name>javax.faces.STATE_SAVING_METHOD</param-name> 
+		<param-value>client</param-value> </context-param -->
+	<!-- To let Mojarra auto start it needs some JSF annotation (@ManagedBean) 
+		instead of CDI @Named) -->
+	<servlet>
+		<servlet-name>Faces Servlet</servlet-name>
+		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<filter>
+		<filter-name>primeFacesFileUploadFilter</filter-name>
+		<filter-class>org.primefaces.webapp.filter.FileUploadFilter</filter-class>
+	</filter>
+	<!-- filter> <display-name>checkPagesFilter</display-name> <filter-name>checkPagesFilter</filter-name> 
+		<filter-class>com.intermacs.core.web.common.filters.CheckPagesFilter</filter-class> 
+		</filter> <filter-mapping> <filter-name>checkPagesFilter</filter-name> <servlet-name>Faces 
+		Servlet</servlet-name> </filter-mapping -->
+
+	<filter-mapping>
+		<filter-name>primeFacesFileUploadFilter</filter-name>
+		<servlet-name>Faces Servlet</servlet-name>
+	</filter-mapping>
+
+
+	<servlet-mapping>
+		<servlet-name>Faces Servlet</servlet-name>
+		<url-pattern>*.xhtml</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Faces Servlet</servlet-name>
+		<url-pattern>*.jsf</url-pattern>
+	</servlet-mapping>
+	<session-config>
+		<session-timeout>30</session-timeout>
+	</session-config>
+
+
+	<mime-mapping>
+		<extension>ico</extension>
+		<mime-type>image/x-icon</mime-type>
+	</mime-mapping>
+
+	<mime-mapping>
+		<extension>ttf</extension>
+		<mime-type>application/font-sfnt</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>woff</extension>
+		<mime-type>application/font-woff</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>eot</extension>
+		<mime-type>application/vnd.ms-fontobject</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>eot?#iefix</extension>
+		<mime-type>application/vnd.ms-fontobject</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>svg</extension>
+		<mime-type>image/svg+xml</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>svg#exosemibold</extension>
+		<mime-type>image/svg+xml</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>svg#exobolditalic</extension>
+		<mime-type>image/svg+xml</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>svg#exomedium</extension>
+		<mime-type>image/svg+xml</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>svg#exoregular</extension>
+		<mime-type>image/svg+xml</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>svg#fontawesomeregular</extension>
+		<mime-type>image/svg+xml</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>xhtml</extension>
+		<mime-type>text/html</mime-type>
+	</mime-mapping>
+
+
+	<!-- add a welcome-file-list entry to allow JSF pages to be sued as welcome 
+		files -->
+	<welcome-file-list>
+		<welcome-file>/login.jsf</welcome-file>
+		<welcome-file>/index.html</welcome-file>
+		<welcome-file>/index.xhtml</welcome-file>
+		<welcome-file>/login.xhtml</welcome-file>
+	</welcome-file-list>
+	<error-page>
+		<error-code>404</error-code>
+		<location>/error.xhtml</location>
+	</error-page>
+	<error-page>
+		<error-code>500</error-code>
+		<location>/error.xhtml</location>
+	</error-page>
+	<error-page>
+		<exception-type>java.lang.Throwable</exception-type>
+		<location>/error/error.jsf</location>
+	</error-page>
+	<error-page>
+		<exception-type>javax.faces.application.ViewExpiredException</exception-type>
+		<location>/error/viewExpired.jsf</location>
+	</error-page>
+
+	<!--Defining security constraint for type of roles available -->
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>User Authentication Policy</web-resource-name>
+			<url-pattern>/views/*</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>*</role-name>
+		</auth-constraint>
+	</security-constraint>
+	<!--Defining security constraint for type of roles available Defining type 
+		of authenitcation mechanism -->
+	<login-config>
+		<auth-method>FORM</auth-method>
+		<form-login-config>
+			<form-login-page>/login.xhtml</form-login-page>
+			<form-error-page>/error.xhtml</form-error-page>
+		</form-login-config>
+	</login-config>
+	<!--Defining type of authenitcation mechanism Denining security role -->
+	<security-role>
+		<role-name>*</role-name>
+	</security-role>
+</web-app>
