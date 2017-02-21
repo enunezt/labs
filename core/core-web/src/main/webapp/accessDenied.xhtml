@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition template="/WEB-INF/templates/layoutFull.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"               
+                xmlns:p="http://primefaces.org/ui">
+    <ui:define name="content">
+        <h:outputStylesheet name="apps.css" library="css"/>
+       <f:view>
+      <p:panel header="${msgs.lbl_informacion}" menuTitle="${msgs.lbl_informacion}" id="pnlInfoAD"  widgetVar="panelInfoAD">
+ 		<p:graphicImage name="acceso_denegado.jpg" alt="Acceso Denegado" cache="false" width="200" height="200" id="idImagenAccesoDenegado" library="images" style="padding: 0 32%;"/>  
+       </p:panel>
+ 		</f:view>
+    </ui:define>
+</ui:composition>

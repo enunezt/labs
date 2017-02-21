@@ -1,0 +1,31 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<ui:composition>
+    <!-- <h:graphicImage library="images" name="logo.png" styleClass="logo" alt="Aplicaciones Java WEB"/>  -->
+    <h:outputText value="Web Aplicación"
+                  style="display:block; font-size:28px; position:absolute; top:16px; margin-left:100px;"/>
+
+    <h:panelGrid columns="7" styleClass="smallNav" rendered="false"
+                 columnClasses="smallNavText,smallNavImg,smallNavText,smallNavImg,smallNavText">    
+     <!-- 
+        <h:outputText value="|"/>
+        <h:outputLink value="#" onclick="dlgDevelopers.show()">
+            <h:outputText value="Developers"/>
+        </h:outputLink>
+         -->
+    </h:panelGrid>
+ <!-- 
+    <pe:ajaxStatus styleClass="logo" style="left:360px; width:32px; height:32px; margin-top: 12px;" id="statusId" >
+   
+        <f:facet name="start">
+            <h:graphicImage library="images" name="ajax-loader.gif" alt="AJAX Status"/>
+        </f:facet>
+        <f:facet name="complete">
+            <h:outputText value=""/>
+        </f:facet>
+    </pe:ajaxStatus>
+    -->
+</ui:composition>
+</html>

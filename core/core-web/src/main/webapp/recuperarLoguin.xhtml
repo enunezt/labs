@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition template="/WEB-INF/templates/template_login.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"               
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:my="http://java.sun.com/jsf/composite/components">
+    <ui:define name="content">
+      
+       
+       <f:view>
+     	 <h:form id="formRecuperarDatos">
+     	
+    <p:messages autoUpdate="true" id="idMsg" showSummary="false" showDetail="true"></p:messages>
+   <p:panel header="${msgs.lbl_recuperacion_loguin}" style="width:350px; margin:0 auto 0 auto;">
+
+    <h:panelGrid columns="2" id="idPanelDatos">
+    <h:outputLabel value="${msgs.lbl_TipDocumento}" />
+    <p:selectOneMenu value="#{recuperacionDatosMB.usuarioFiltro.tipoDocumento}" style="width:150px;" 
+				label="${msgs.lbl_tipoDocumento}" required="#{param['validarForm']=='true'}"
+					effect="fade" converter="catalogoConverter">
+					<f:selectItem itemLabel="${msgs.lbl_item_seleccione}" itemValue="" />
+					<f:selectItems value="${recuperacionDatosMB.tipoDocumentoItems}"
+						var="tipoDocumento"
+						itemLabel="${tipoDocumento.label}"
+						itemValue="${tipoDocumento}" />
+				</p:selectOneMenu>
+				
+				<h:outputLabel value="${msgs.lbl_numDocumento}" />
+		<h:panelGroup>	
+		<p:inputText value="#{ recuperacionDatosMB.usuarioFiltro.numDocumento}" label="${msgs.lbl_numDocumento}"  required="#{param['validarForm']=='true'}"/>
+		</h:panelGroup>	
+		
+		<h:outputLabel value="${msgs.lbl_email}" />
+		<h:panelGroup>	
+		<p:inputText value="#{recuperacionDatosMB.usuarioFiltro.email}" required="#{param['validarForm']=='true'}" label="${msgs.lbl_email}"
+		validatorMessage="${msgs.msg_mail_invalidao}">
+		<f:validateRegex
+		pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
+		
+		
+		</p:inputText>
+		</h:panelGroup>		
+		</h:panelGrid>        
+    <p:commandButton value="${msgs.btn_btn_enviar}" update=":formRecuperarDatos:idMsg,:formRecuperarDatos:idPanelDatos" 
+    process="@this :formRecuperarDatos:idPanelDatos"
+    action="#{recuperacionDatosMB.enviarSolicitudRecuperacionDatos}">
+    <f:param name="validarForm" value="true" />
+    </p:commandButton>    
+    </p:panel>
+  
+   <p:commandLink action="/login.jsf?faces-redirect=true" value="${msgs.lbl_iniciar_sesion}" immediate="true" >
+    <f:param name="validarForm" value="false" />
+   </p:commandLink>
+ </h:form>  
+ 		</f:view>
+  
+    </ui:define>
+</ui:composition>

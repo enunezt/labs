@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+       xmlns:f="http://java.sun.com/jsf/core">
+<ui:composition >
+<h:panelGroup>
+ <h:form id="formThemes"> 
+ 
+ <h:panelGrid columns="2" cellpadding="2" cellspacing="0" >
+  	<h:graphicImage value="../../resources/images/#{userSettingsMB.fotoId}"  style="border-radius: 5px 5px 5px 5px;"
+ 	height="40" width="40" rendered="#{userSettingsMB.fotoId !=null}"/>
+ 	<h:graphicImage value='#{resource["images/bg_fotoPerfil.png"]}'  style="border-radius: 5px 5px 5px 5px;"
+ 	height="40" width="40" rendered="#{userSettingsMB.fotoId==null}"/>
+ 		<h:panelGroup>
+ 	<h:outputText value="#{userSettingsMB.infoUser}" escape="false" styleClass="fontSize9"/>
+ 	</h:panelGroup>
+ </h:panelGrid>
+
+
+ 
+<!--    <p:themeSwitcher style="width:140px" id="defaultSwitcher" value="#{userSettingsMB.theme}">   -->
+<!--             <f:selectItem itemLabel="Choose Theme" itemValue="" />   -->
+<!--             <f:selectItems value="#{userSettingsMB.themes}" />   -->
+<!--               <p:ajax listener="#{userSettingsMB.saveThemeEvent()}" />   -->
+<!--         </p:themeSwitcher> -->
+        
+       
+       
+   <p:separator/> 
+    <p:menu id="componentList" showEffect="fade" showEvent="click" style="width:95%;" >
+     <p:menuitem value="${msgs.btn_salir}" process="@this" action="#{userSettingsMB.logout(1)}"/>
+     <p:separator/>  
+    <p:menuitem value="Principal"  url="/index.jsf"/>
+    </p:menu>
+    
+     </h:form> 
+    <p:separator/>    
+   
+    <p:panelMenu  binding="#{userSettingsMB.model}" id="Idmenupcipoal" /> 
+        
+ </h:panelGroup>      
+</ui:composition>
+</html> 
+
+

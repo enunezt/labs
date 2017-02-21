@@ -1,0 +1,199 @@
+body {
+    background:#ffffff;
+    
+}
+.transparent-background:before {
+	background-image: url("../images/logo.png");
+    background-color: #cccccc;
+    background-size: 350px 200px;
+   /* background-repeat: no-repeat;*/
+	
+   /* background: url(../images/logo.png) no-repeat scroll 0 0 transparent ;*/
+    opacity: 0.05;
+	filter: alpha(opacity=0.5); /* For IE8 and earlier */
+	 content: "INTERMAC'S";
+      bottom: 0;
+    left: 0;
+ 	right: 0;
+    top: 0;
+	position: absolute;
+    z-index: -1;
+    margin: 1% auto;
+}
+.transparent-background {
+    width:100%;
+  
+}
+/*
+cuerpo de la pagina
+*/
+#page {
+
+	width: 100%;
+	overflow: auto;
+	/*height: 650px;
+	margin-left: 0px;
+	margin-top: 0px;*/
+/*	background: -webkit-linear-gradient(#9a1b1e,#8A4B08);
+	box-shadow: 0px 1px 50px #8A4B08;*/
+}
+/*
+barra de inicio de sesiones
+*/
+#header {
+	width: 100%;
+	min-height: 50px;
+	max-height: 80px;
+	/*background: -webkit-linear-gradient(#FDFAFA,#F9F6F6);
+	background: -webkit-linear-gradient(center top , #FDFAFA, #F9F6F6) repeat scroll 0 0 transparent;   
+background:    -moz-linear-gradient(center top , #FDFAFA, #F9F6F6) repeat scroll 0 0 transparent;
+background:     -ms-linear-gradient(center top , #FDFAFA, #F9F6F6) repeat scroll 0 0 transparent;
+background:      -o-linear-gradient(center top , #FDFAFA, #F9F6F6) repeat scroll 0 0 transparent;*/
+	
+	border-bottom: solid 1px;
+	border-radius: 5px;
+	box-shadow: 0px 1px 10px #0B610B;
+	border-color: #0B610B;
+	text-align:center;
+	padding-top: 2%;
+	
+	color: #0B610B;
+	font-size: 130%;
+	font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+	font-weight:bold;
+	font-stretch: normal;
+}
+
+/*
+*principal de la pagina
+*/
+#content {
+opacity: 1.0;
+	height: 400px;
+	min-width:250px;
+	max-width:450px;
+	margin: 5% auto;
+	/*position: absolute;*/
+	/*background: -webkit-linear-gradient(#cccccc,#ececec);*/
+	box-shadow: 1px 1px 10px 1px #0B610B;
+	border: solid 2px #0B610B;
+	border-radius: 5px;
+	padding:5px;
+	background-color: transparent;
+}
+
+.gadget{
+float:left;
+height: 100px;
+min-width:200px;
+width:23%;
+margin: 2% 0 2% 2%;
+
+/*position: relative;*/
+padding-left: 1px;
+overflow: hidden;
+vertical-align: middle !important;
+
+}
+
+
+
+div.gadget {
+border: solid 2px #0B610B;
+border-radius: 5px;
+}
+
+div.gadget img{
+float:left;
+height: 95%;
+min-width:85px;
+max-width:90px;
+width:40%;
+margin: 1px 2px 0px 0px;
+border-radius: 5px;
+}
+div.gadget img:hover {
+    opacity: 0.5;
+    filter: alpha(opacity=50); /* For IE8 and earlier */
+} 
+
+
+div.gadget span{
+width:50%;
+float:right;
+/*margin: 3% 0;*/
+}
+
+
+/*img {
+    opacity: 0.4;
+    filter: alpha(opacity=40); 
+}*/
+
+
+.nomApp{
+text-align: center;
+vertical-align: middle !important;
+font-size: 14px;
+font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+font-weight:bold;
+
+}
+
+.descApp{
+text-align: center;
+vertical-align: button !important;
+font-size: 12px;
+font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+}
+
+.transparent-background-pap:before {
+    background: url(../images/fondo.png) repeat scroll 0 0 transparent;
+    opacity: 0.5;
+	filter: alpha(opacity=0.5); /* For IE8 and earlier */
+	 content: "UNITRÓPICO";
+      bottom: 0;
+    left: 0;
+ right: 0;
+    top: 0;
+	position: absolute;
+    z-index: -1;
+}
+.transparent-background-pap {
+    width:100%;
+}
+
+
+#content-pap {
+    background-color: #ffffff;
+    border: 2px solid rgb(43,0,6);
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px 1px rgb(72,0,11);
+    height: 500px;
+    margin: 1% 15% 15% 20%;
+    min-width: 215px;
+    position: absolute;
+}
+
+#header-pap {
+	width: 100%;
+	height: 50px;
+	/*background: -webkit-linear-gradient(#FDFAFA,#F9F6F6);
+	background: -webkit-linear-gradient(center top , #FDFAFA, #F9F6F6) repeat scroll 0 0 transparent;   
+background:    -moz-linear-gradient(center top , #FDFAFA, #F9F6F6) repeat scroll 0 0 transparent;
+background:     -ms-linear-gradient(center top , #FDFAFA, #F9F6F6) repeat scroll 0 0 transparent;
+background:      -o-linear-gradient(center top , #FDFAFA, #F9F6F6) repeat scroll 0 0 transparent;*/
+	position: relative;
+	float: left;
+	border-bottom: solid 1px;
+	box-shadow: 0px 1px 10px rgb(72,0,11);
+	border-color: rgb(72,0,11);
+	text-align:center;
+	padding-top: 2%;
+	
+	color: rgb(72,0,11);
+	font-size: 130%;
+	font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+	font-weight:bold;
+	font-stretch: normal;
+}

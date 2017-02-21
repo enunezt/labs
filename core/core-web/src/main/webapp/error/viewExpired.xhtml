@@ -1,0 +1,28 @@
+<ui:composition template="/WEB-INF/templates/layoutFull.xhtml"
+     xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+		<ui:define name="content">
+ 		<f:view>
+
+<h:form>
+
+            <h1 class="title ui-widget-header ui-corner-all">${msgs.msg_cerro_sesion}</h1>
+            <div class="entry">
+            
+             <p:dialog header="${msgs.msg_sistema}" widgetVar="sessionTimeOutDialog" 
+			 modal="true" fixedCenter="true" closable="false" width="400" visible="true">
+			 <p>
+			 <h:outputText value="${msgs.msg_cerro_sesion}" rendered="#{param.reason == 'expired'}" />
+			 </p>
+             <h:commandLink action="/login.jsf?faces-redirect=true" value="${msgs.lbl_iniciar_sesion}" />
+			</p:dialog>
+               
+            </div>
+</h:form>
+	</f:view>
+	</ui:define>
+
+</ui:composition>
