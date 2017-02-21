@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+  <jboss-deployment-structure >
+  <ear-subdeployments-isolated>true</ear-subdeployments-isolated>
+  <deployment>
+  
+    <!-- dependencies>
+       
+    </dependencies-->
+	
+	<resources>
+      <resource-root path="core-web-classes.jar" />
+    </resources>
+    </deployment>
+ 	
+	 <sub-deployment name="core-ejb.jar">
+    <!-- This corresponds to the module for a web deployment -->
+    <!-- it can use all the same tags as the <deployment> entry above -->
+    <dependencies>
+      <!-- Adds a dependency on a ejb jar. This could also be done with a Class-Path entry -->
+      <!-- module name="deployment.core-ear.ear.core-ejb.jar" export="true" /--> 
+    </dependencies>
+    </sub-deployment>
+	
+	<sub-deployment name="core-web.war">
+    <!-- This corresponds to the module for a web deployment -->
+    <!-- it can use all the same tags as the <deployment> entry above -->
+    <dependencies>
+      <!-- Adds a dependency on a ejb jar. This could also be done with a Class-Path entry -->
+      <module name="deployment.core-ear.ear.core-ejb.jar" export="true" />
+    </dependencies>
+    </sub-deployment>
+    
+   
+</jboss-deployment-structure>
+
